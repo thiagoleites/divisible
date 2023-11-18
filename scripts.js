@@ -1,6 +1,11 @@
+// Autor: Thiago Leite
+
+// Constantes
+
 const numeroInformado = document.getElementById("number");
 const botao = document.getElementById("botao");
-const resut = document.getElementById("resultado");
+const resut = document.getElementById("results");
+const error = document.getElementById("error");
 function somaDivisieis(numero)
 {
     let soma = 0;
@@ -18,11 +23,17 @@ function somaDivisieis(numero)
 
 // Evento de click no botão
 
-botao.addEventListener("click", function()
+botao.addEventListener("click", () => 
 {
+    
     let numero = numeroInformado.value;
     let resultado = somaDivisieis(numero);
-    resut.innerHTML = resultado;
+    
+    if (numero === '' || isNaN(numero) || numero === 0 || numero === '0') {
+        numeroInformado.classList.add('valid');
+        error.innerHTML = 'Digite um número válido';
+    } else {
+        resut.innerHTML = resultado;
+    }
 
-    console.log('teste')
 });
