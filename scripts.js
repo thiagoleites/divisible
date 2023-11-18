@@ -6,6 +6,7 @@ const numeroInformado = document.getElementById("number");
 const botao = document.getElementById("botao");
 const resut = document.getElementById("results");
 const error = document.getElementById("error");
+
 function somaDivisieis(numero)
 {
     let soma = 0;
